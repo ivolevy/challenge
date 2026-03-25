@@ -34,7 +34,7 @@ interface DashboardData {
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
 export default function DashboardPage() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || ''
+  const baseUrl = (process.env.NEXT_PUBLIC_API_BASE_URL || '').replace(/\/+$/, '')
   const { data, error, isLoading, mutate } = useSWR<DashboardData>(
     `${baseUrl}/api/dashboard.php`,
     fetcher,

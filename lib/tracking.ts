@@ -27,7 +27,7 @@ export function trackEvent(
   
   events.push(event)
   
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || ''
+  const baseUrl = (process.env.NEXT_PUBLIC_API_BASE_URL || '').replace(/\/+$/, '')
   
   // Fire async request to backend (non-blocking)
   fetch(`${baseUrl}/api/track.php`, {
