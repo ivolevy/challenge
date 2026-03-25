@@ -30,7 +30,7 @@ export function trackEvent(
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || ''
   
   // Fire async request to backend (non-blocking)
-  fetch(`${baseUrl}/api/php/track.php`, {
+  fetch(`${baseUrl}/api/track.php`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(event)

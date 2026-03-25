@@ -38,7 +38,7 @@ function LandingContent() {
 
     try {
       const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || ''
-      const response = await fetch(`${baseUrl}/api/php/subscribe.php`, {
+      const response = await fetch(`${baseUrl}/api/subscribe.php`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
